@@ -1,0 +1,97 @@
+:root {
+  --bordeaux-fonce: #4a1f2b;
+  --bordeaux: #682c3e;
+  --dore: #c9a227;
+  --creme: #faf6f0;
+  --texte: #2d2424;
+  --blanc: #ffffff;
+  --font-titres: "Cormorant Garamond", serif;
+  --font-texte: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--creme);
+  color: var(--texte);
+  font-family: var(--font-texte);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header,
+footer {
+  background-color: var(--bordeaux-fonce);
+}
+
+.logo {
+  color: var(--dore);
+  text-decoration: none;
+  font-family: var(--font-titres);
+}
+
+header li a {
+  color: var(--blanc);
+  text-decoration: none;
+  font-family: var(--font-texte);
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-titres);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  color: var(--blanc);
+  
+  font-family: var(--font-texte);
+}
+footer a {
+  color: var(--blanc);
+  text-decoration: none;
+}
+
+#menu-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: block;
+    background-color: transparent;
+    border: 1px solid var(--blanc);
+    color: var(--blanc);
+  }
+  #menu-nav {
+    display: none;
+  }
+
+  #menu-nav.open {
+    display: block;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
