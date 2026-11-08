@@ -1,0 +1,19 @@
+{
+    "name": "off8/vite-et-gourmand",
+    "authors": [
+        {
+            "name": "Kevin Basseyila",
+            "email": "kbasseyila@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "~1.20.0"
+    },
+    "config": {
+        "policy": {
+            "advisories": {
+                "block": false
+            }
+        }
+    }
+}

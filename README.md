@@ -20,4 +20,7 @@ Dans le dossier du projet : php -S localhost:8000
 (le site sera disponible à partir du ticket VG-07)
 
 ### Comptes de test
-À compléter au ticket VG-08.
+José (administrateur) : jose.garcia@example.com / Mot de passe  : Admin1234!
+Julie (employé) : julie.martin@example.com / Mot de passe  : Admin1234!
+Pierre (utilisateur) : pierre.dubois@example.com / Mot de passe  : Admin1234!
+Marie (utilisateur) : marie.durand@example.com / Mot de passe  : Admin1234!
