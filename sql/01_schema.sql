@@ -134,3 +134,11 @@ CREATE TABLE message_contact (
     date DATETIME
 );
 
+CREATE TABLE reinitialisation (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    utilisateur_id INT NOT NULL,
+    jeton VARCHAR(64) NOT NULL UNIQUE,
+    expire_le DATETIME NOT NULL,
+    utilise TINYINT(1) NOT NULL DEFAULT 0,
+    FOREIGN KEY (utilisateur_id) REFERENCES utilisateur(id)
+);
