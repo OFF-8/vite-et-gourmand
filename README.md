@@ -9,8 +9,6 @@ Lien Trello : https://trello.com/b/6aed087b01e731d85fcc1ae6
 
 ## Installation
 
-## Installation
-
 ### Prérequis
 - XAMPP installé dans C:\Env\xamp. Démarrer Apache et MySQL.
 - PHP 8.2, Composer, MariaDB
