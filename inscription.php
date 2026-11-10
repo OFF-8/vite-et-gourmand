@@ -37,22 +37,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
             );
             $ajout->execute([
-                $nom, $prenom, $email, $gsm, $adresse, $code_postal, $ville,
-                $hash, 'utilisateur', 1
+                $nom,
+                $prenom,
+                $email,
+                $gsm,
+                $adresse,
+                $code_postal,
+                $ville,
+                $hash,
+                'utilisateur',
+                1
             ]);
             $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-$mail->isSMTP();
-$mail->Host = '127.0.0.1';
-$mail->Port = 1025;
-$mail->SMTPAuth = false;
-$mail->setFrom('contact@vite-et-gourmand.test', 'Vite & Gourmand');
-$mail->addAddress($email);
-$mail->Subject = 'Bienvenue chez Vite & Gourmand';
-$mail->Body = 'Bonjour ' . $prenom . ",\n\nVotre compte a bien été créé.\n\nL'équipe Vite & Gourmand";
-$mail->send();
+            $mail->isSMTP();
+            $mail->Host = '127.0.0.1';
+            $mail->Port = 1025;
+            $mail->SMTPAuth = false;
+            $mail->setFrom('contact@vite-et-gourmand.test', 'Vite & Gourmand');
+            $mail->addAddress($email);
+            $mail->Subject = 'Bienvenue chez Vite & Gourmand';
+            $mail->Body = 'Bonjour ' . $prenom . ",\n\nVotre compte a bien été créé.\n\nL'équipe Vite & Gourmand";
+            $mail->send();
 
-header('Location: connexion.php');
-exit;
+            header('Location: connexion.php');
+            exit;
         }
     }
 }
@@ -60,49 +68,51 @@ include 'includes/header.php';
 ?>
 <main>
     <h1>Créer un compte</h1>
-    <?php if ($erreur !== '') { echo '<p>' . $erreur . '</p>'; } ?>
+    <?php if ($erreur !== '') {
+        echo '<p>' . $erreur . '</p>';
+    } ?>
     <form method="post">
-    <p>
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required>
-    </p>
-    <p>
-        <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom" required>
-    </p>
-    <p>
-        <label for="gsm">Téléphone</label>
-        <input type="tel" id="gsm" name="gsm" required>
-    </p>
-    <p>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
-    </p>
-    <p>
-        <label for="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse" required>
-    </p>
-    <p>
-        <label for="code_postal">Code postal</label>
-        <input type="text" id="code_postal" name="code_postal" required>
-    </p>
-    <p>
-        <label for="ville">Ville</label>
-        <input type="text" id="ville" name="ville" required>
-    </p>
-    <p>
-        <label for="mot_de_passe">Mot de passe</label>
-        <input type="password" id="mot_de_passe" name="mot_de_passe" required>
-    </p>
-    <p>
-        <label for="confirmation">Confirmer le mot de passe</label>
-        <input type="password" id="confirmation" name="confirmation" required>
-    </p>
-    <p>
-        <input type="checkbox" id="rgpd" name="rgpd" required>
-        <label for="rgpd">J’accepte que mes données servent à créer mon compte et à commander.</label>
-    </p>
-    <button type="submit">Créer mon compte</button>
-</form>
+        <p>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+        </p>
+        <p>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </p>
+        <p>
+            <label for="gsm">Téléphone</label>
+            <input type="tel" id="gsm" name="gsm" required>
+        </p>
+        <p>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required>
+        </p>
+        <p>
+            <label for="code_postal">Code postal</label>
+            <input type="text" id="code_postal" name="code_postal" required>
+        </p>
+        <p>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" required>
+        </p>
+        <p>
+            <label for="mot_de_passe">Mot de passe</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+        </p>
+        <p>
+            <label for="confirmation">Confirmer le mot de passe</label>
+            <input type="password" id="confirmation" name="confirmation" required>
+        </p>
+        <p>
+            <input type="checkbox" id="rgpd" name="rgpd" required>
+            <label for="rgpd">J’accepte que mes données servent à créer mon compte et à commander.</label>
+        </p>
+        <button type="submit">Créer mon compte</button>
+    </form>
 </main>
 <?php include 'includes/footer.php'; ?>
